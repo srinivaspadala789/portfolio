@@ -51,7 +51,7 @@ const BirthdayWish = ({ name = "Chellamma..❤️" }) => {
         <div className="reveal-card">
           <img src={personImg} alt="person" className="profile-pic" />
           <h1>Happy Birthday {name}!</h1>
-          <p>Ilanti puttinarojulu marenno jarupukovali, malli vache puttina rujuki nannu mama ni cheyyalani korukuntu ...Mee Annaya❤️</p>
+          <p>Ilanti puttinarojulu marenno jarupukovali Korukuntu.. Malli vache puttina rujuki nannu Mama ni cheyyalani Asisthu... Mee Annaya...❤️</p>
         </div>
       )}
     </div>
