@@ -3,9 +3,9 @@ import { useSwipeable } from "react-swipeable";
 import "./BirthdayWish.css";
 
 import cakeImg from "./Assets/cake2.jpeg";
-import cakeCutImg from "./Assets/cake2.jpeg";
+import cakeCutImg from "./Assets/cake4.jpeg";
 import personImg from "./Assets/kid.jpg";
-import wishAudio from "./Assets/song2.mp3"; // 🔥 voice note
+import wishAudio from "./Assets/song3.mp3";
 
 const BirthdayWish = ({ name = "Chellamma..❤️" }) => {
   const [isCut, setIsCut] = useState(false);
@@ -25,7 +25,6 @@ const BirthdayWish = ({ name = "Chellamma..❤️" }) => {
     }
   };
 
-  // 🔊 Play audio when message card appears
   useEffect(() => {
     if (showMessage && audioRef.current) {
       audioRef.current.play().catch(() => {});
@@ -34,8 +33,6 @@ const BirthdayWish = ({ name = "Chellamma..❤️" }) => {
 
   return (
     <div className={`reveal-container ${isCut ? "night-bg" : ""}`} {...handlers}>
-      
-      {/* 🔥 Hidden audio element */}
       <audio ref={audioRef} src={wishAudio} preload="auto" />
 
       {isCut && (
@@ -56,10 +53,10 @@ const BirthdayWish = ({ name = "Chellamma..❤️" }) => {
       {isCut && !showMessage && (
         <div className="cake-halves">
           <div className="half left">
-            <img src={cakeCutImg} alt="left half" />
+            <img src={cakeCutImg} alt="left slice" />
           </div>
           <div className="half right">
-            <img src={cakeCutImg} alt="right half" />
+            <img src={cakeCutImg} alt="right slice" />
           </div>
         </div>
       )}

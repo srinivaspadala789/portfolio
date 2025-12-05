@@ -44,13 +44,6 @@
   100% { transform: translateY(-120px) scale(0.8); opacity: 0; }
 }
 
-/* ================== Gradient Animation ================== */
-@keyframes colorfulBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
 /* ================== Initial Cake ================== */
 .cake-section {
   display: flex;
@@ -65,16 +58,8 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
   border-radius: 15px;
 }
-@keyframes floatCake {
-  0% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
-  100% { transform: translateY(0); }
-}
-@keyframes cakeScale {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
-}
+@keyframes floatCake { 50% { transform: translateY(-12px); } }
+@keyframes cakeScale   { 50% { transform: scale(1.05); } }
 .swipe-text {
   margin-top: 20px;
   font-size: 18px;
@@ -85,54 +70,51 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
-/* ================== Cake Slices (cone-shaped, cropped) ================== */
+/* ================== PERFECT CONICAL CAKE SLICES ================== */
 .cake-halves {
   position: relative;
   width: 260px;
-  height: 260px; /* same as original cake */
+  height: 260px;
 }
+
+/* Common slice container */
 .half {
   position: absolute;
   width: 50%;
   height: 100%;
   overflow: hidden;
 }
+
+/* Full cake image inside both slices */
 .half img {
   position: absolute;
-  width: 260px; 
-  height: 260px;
-  object-fit: none; /* no compression */
   top: 0;
+  width: 260px;
+  height: 260px;
 }
 
 /* Left slice */
-.half.left img {
-  left: 0; /* show left side */
-}
 .half.left {
-  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  clip-path: polygon(0 0, 85% 50%, 0 100%);
   transform-origin: bottom left;
   animation: leftSlice 1s forwards;
 }
+.half.left img { left: 0; }
 
 /* Right slice */
-.half.right img {
-  left: -130px; /* shift image to show right half */
-}
 .half.right {
-  clip-path: polygon(100% 0, 0 50%, 100% 100%);
+  clip-path: polygon(100% 0, 15% 50%, 100% 100%);
   transform-origin: bottom right;
   animation: rightSlice 1s forwards;
 }
+.half.right img { left: -130px; }
 
 /* Slice animations */
 @keyframes leftSlice {
-  0% { transform: rotate(0deg) translate(0, 0); }
-  100% { transform: rotate(-25deg) translate(-50px, -20px); }
+  100% { transform: rotate(-32deg) translate(-55px, -18px); }
 }
 @keyframes rightSlice {
-  0% { transform: rotate(0deg) translate(0, 0); }
-  100% { transform: rotate(25deg) translate(50px, -20px); }
+  100% { transform: rotate(32deg) translate(55px, -18px); }
 }
 
 /* ================== Reveal Card ================== */
@@ -159,22 +141,11 @@
   border: 4px solid white;
   object-fit: cover;
   margin-bottom: 15px;
-  box-shadow: 0 0 25px rgba(255, 80, 110, 0.9);
   animation: glow 3s infinite alternate, profileScale 2s infinite alternate;
 }
-@keyframes glow {
-  0% { box-shadow: 0 0 10px rgba(255,80,110,0.6); }
-  50% { box-shadow: 0 0 35px rgba(255,80,110,1); }
-  100% { transform: scale(1); }
-}
-@keyframes profileScale {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-  100% { transform: scale(1); }
-}
+@keyframes glow       { 50% { box-shadow: 0 0 35px rgba(255,80,110,1); } }
+@keyframes profileScale { 50% { transform: scale(1.08); } }
 
-/* ================== Fade In ================== */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+/* Misc */
+@keyframes fadeIn     { from { opacity: 0; } to { opacity: 1; } }
+@keyframes colorfulBG { 50% { background-position: 100% 50%; } }
