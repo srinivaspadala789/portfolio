@@ -5,7 +5,7 @@ import "./BirthdayWish.css";
 import cakeImg from "./Assets/cake2.jpeg";
 import cakeCutImg from "./Assets/cake2.jpeg";
 import personImg from "./Assets/kid.jpg";
-import wishAudio from "./Assets/song3.mp3"; // 🔥 voice note
+import wishAudio from "./Assets/song2.mp3"; // 🔥 voice note
 
 const BirthdayWish = ({ name = "Chellamma..❤️" }) => {
   const [isCut, setIsCut] = useState(false);
