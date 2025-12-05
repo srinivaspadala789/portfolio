@@ -25,15 +25,20 @@ const BirthdayWish = ({ name = "Chellamma..❤️" }) => {
     }
   };
 
+  // 🔥 Song starts ONLY when birthday card shows
   useEffect(() => {
     if (showMessage && audioRef.current) {
-      audioRef.current.play().catch(() => {});
+      audioRef.current.muted = false;
+      setTimeout(() => {
+        audioRef.current.play().catch(() => {});
+      }, 400);
     }
   }, [showMessage]);
 
   return (
     <div className={`reveal-container ${isCut ? "night-bg" : ""}`} {...handlers}>
-      <audio ref={audioRef} src={wishAudio} preload="auto" />
+      {/* Audio initially muted, unmuted only when card shown */}
+      <audio ref={audioRef} src={wishAudio} preload="auto" muted />
 
       {isCut && (
         <div className="sparkle-container">
@@ -66,7 +71,8 @@ const BirthdayWish = ({ name = "Chellamma..❤️" }) => {
           <img src={personImg} alt="person" className="profile-pic" />
           <h1>Happy Birthday {name}!</h1>
           <p>
-            Ilanti puttinarojulu marenno jarupukovali Korukuntu.. Malli vache puttina rujuki nannu Mama ni cheyyalani Asisthu... Mee Annaya...❤️
+            Ilanti puttinarojulu marenno jarupukovali Korukuntu.. Malli vache puttina rujuki 
+            nannu Mama ni cheyyalani Asisthu... Mee Annaya...❤️
           </p>
         </div>
       )}
