@@ -9,13 +9,13 @@ import BirthdayWish from "./components/BirthdayWish";
 function App() {
   return (
     <div>
-      {/* <Header />
+      <Header />
       <About />
       <Experience />
       <Skills />
       <Projects />
-      <Contact /> */}
-      <BirthdayWish/>
+      <Contact />
+      {/* <BirthdayWish/> */}
     </div>
   );
 }
